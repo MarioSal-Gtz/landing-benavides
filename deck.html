@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Guía de marca y estrategia de marketing del Dr. Carlos Benavides.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0B0A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2032%2032'%3E%3Crect%20width%3D'32'%20height%3D'32'%20rx%3D'7'%20fill%3D'%23E0C05C'%2F%3E%3Cpath%20d%3D'M5%2012.5c0-2.2%201.7-3.9%203.9-3.9%201.8%200%202.6%201.1%204.3%201.1s2.5-1.1%204.3-1.1%202.6%201.1%204.3%201.1%202.5-1.1%204.3-1.1c2.2%200%203.9%201.7%203.9%203.9%200%205.6-4.6%2013.2-8.2%2013.2-1.8%200-2.2-2.2-4.3-2.2s-2.5%202.2-4.3%202.2C9.6%2025.7%205%2018.1%205%2012.5z'%20fill%3D'none'%20stroke%3D'%23161615'%20stroke-width%3D'2'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%2F%3E%3C%2Fsvg%3E">
+<title>Guía de marca · Dr. Benavides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Deck marca + estrategia — Dr. Carlos Benavides. Editorial, oscuro. */
+  :root{
+    color-scheme:dark;
+    --bg:#0B0B0A; --panel:#15140F; --line:#272621; --line-strong:#3a3832;
+    --fg:#F3F2EC; --muted:#A5A49A; --faint:#6C6B62;
+    --gold:#E0C05C;
+    --wa:#25D366; --maxw:900px;
+    --sans:"Hanken Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow:hidden}
+  h1,h2,h3{font-family:var(--serif); font-weight:500; line-height:1.02; margin:0; text-wrap:balance; letter-spacing:-.025em}
+  p{margin:0}
+  a{color:inherit}
+  b{font-weight:700}
+
+  .prog{position:fixed; top:0; left:0; right:0; height:2px; background:rgba(255,255,255,.07); z-index:30}
+  .prog i{display:block; height:100%; width:0; background:var(--gold); transition:width .4s ease}
+
+  .deck{position:relative; height:100%; width:100%}
+  .slide{position:absolute; inset:0; display:flex; align-items:center; padding:clamp(26px,6vw,80px); padding-top:max(clamp(26px,6vw,70px),env(safe-area-inset-top)); padding-bottom:calc(86px + env(safe-area-inset-bottom)); opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease; pointer-events:none; overflow-y:auto}
+  .slide.active{opacity:1; transform:none; pointer-events:auto}
+  .inner{width:100%; max-width:var(--maxw); margin:0 auto}
+  .idx{position:absolute; top:clamp(14px,4vw,40px); right:clamp(16px,5vw,54px); font-family:var(--serif); font-style:italic; font-size:clamp(3.2rem,9vw,7rem); color:rgba(255,255,255,.055); line-height:1; z-index:0; pointer-events:none; user-select:none}
+  .eye{display:inline-flex; align-items:center; gap:10px; font-size:.72rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--gold); margin-bottom:20px}
+  .eye::before{content:""; width:22px; height:1px; background:var(--gold)}
+  .slide h2{font-size:clamp(2rem,5.6vw,3.7rem); margin-bottom:18px}
+  .lead{color:var(--muted); font-size:clamp(1.02rem,2vw,1.2rem); max-width:60ch; line-height:1.62}
+  .lead b{color:var(--fg)}
+  .src{color:var(--faint); font-size:.73rem; margin-top:22px; letter-spacing:.02em}
+
+  .slide.active .anim{animation:rise .6s ease both}
+  .slide.active .anim:nth-child(2){animation-delay:.06s}
+  .slide.active .anim:nth-child(3){animation-delay:.12s}
+  .slide.active .anim:nth-child(4){animation-delay:.18s}
+  .slide.active .anim:nth-child(5){animation-delay:.24s}
+  .slide.active .anim:nth-child(6){animation-delay:.30s}
+  @keyframes rise{from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none}}
+  @media(prefers-reduced-motion:reduce){ .slide{transition:opacity .2s} .slide.active .anim{animation:none} }
+
+  .logo-mark{display:inline-grid; place-items:center; border-radius:18px; background:var(--fg); color:var(--bg)}
+  .logo-mark svg{stroke:currentColor}
+
+  /* Cover */
+  .cover{text-align:center; max-width:760px}
+  .cover .logo-mark{width:88px; height:88px; margin:0 auto 28px}
+  .cover .logo-mark svg{width:52px; height:52px}
+  .cover h1{font-size:clamp(2.7rem,8vw,5rem)}
+  .cover .sub{font-family:var(--serif); font-style:italic; font-size:clamp(1.2rem,3vw,1.7rem); color:var(--gold); margin-top:14px}
+  .cover .lead{margin:22px auto 0}
+  .cover .cue{margin-top:36px; color:var(--faint); font-size:.88rem}
+
+  /* Full-bleed photo slide */
+  .slide.full{padding:0; align-items:stretch}
+  .full .fimg{position:absolute; inset:0; z-index:0}
+  .full .fimg img{width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.06)}
+  .full .fimg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(6,6,5,.35) 0%,rgba(6,6,5,.55) 45%,rgba(6,6,5,.9) 100%)}
+  .full .inner{position:relative; z-index:2; margin:auto 0 0; padding:clamp(28px,6vw,72px); padding-bottom:calc(92px + env(safe-area-inset-bottom)); max-width:var(--maxw)}
+  .full h2{font-size:clamp(2.3rem,6.4vw,4.4rem); line-height:1}
+  .full .quote-mini{display:flex; gap:28px; flex-wrap:wrap; margin-top:22px}
+  .full .quote-mini span{font-size:.98rem; color:rgba(255,255,255,.85)}
+  .full .quote-mini b{font-family:var(--serif); font-size:1.5rem; color:#fff; display:block}
+
+  /* Big-number editorial rows */
+  .bignum{margin-top:8px; border-top:1px solid var(--line)}
+  .bn{display:flex; align-items:baseline; gap:clamp(16px,4vw,40px); padding:clamp(16px,2.6vw,24px) 0; border-bottom:1px solid var(--line)}
+  .bn .n{font-family:var(--serif); font-size:clamp(2.2rem,6vw,3.6rem); line-height:.9; min-width:5ch; letter-spacing:-.02em}
+  .bn .n.gold{color:var(--gold)}
+  .bn .t{color:var(--muted); font-size:1.02rem; line-height:1.4}
+  .bn .t b{color:var(--fg)}
+
+  /* Numbered editorial list */
+  .nl{border-top:1px solid var(--line)}
+  .nl .row{display:flex; gap:clamp(16px,3vw,28px); padding:clamp(15px,2.4vw,22px) 0; border-bottom:1px solid var(--line)}
+  .nl .i{font-family:var(--serif); font-style:italic; color:var(--faint); font-size:1.6rem; line-height:1; min-width:1.6ch; flex:none}
+  .nl h4{margin:0 0 4px; font-family:var(--sans); font-size:1.08rem; font-weight:700; display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+  .nl p{color:var(--muted); font-size:.92rem; line-height:1.5}
+  .ok{font-size:.68rem; font-weight:800; letter-spacing:.04em; color:#0B0B0A; background:var(--gold); border-radius:999px; padding:3px 9px; text-transform:uppercase}
+
+  /* Checklist editorial */
+  .cl{border-top:1px solid var(--line); columns:2; column-gap:40px}
+  .cl .it{display:flex; gap:12px; align-items:center; padding:13px 0; border-bottom:1px solid var(--line); break-inside:avoid; font-size:.98rem; font-weight:600}
+  .cl .ck{flex:none; color:var(--gold)}
+  .cl .ck svg{width:18px; height:18px; display:block}
+
+  /* Competencia bars */
+  .bars{margin-top:8px}
+  .bar{display:grid; grid-template-columns:clamp(96px,22vw,180px) 1fr auto; gap:14px; align-items:center; padding:9px 0}
+  .bar .nm{font-size:.86rem; color:var(--muted); line-height:1.2}
+  .bar .track{height:12px; background:var(--panel); border-radius:7px; overflow:hidden}
+  .bar .fill{height:100%; background:var(--line-strong); border-radius:7px}
+  .bar .v{font-variant-numeric:tabular-nums; font-weight:700; font-size:.86rem; min-width:3.2ch; text-align:right}
+  .bar.me .nm{color:var(--fg); font-weight:700}
+  .bar.me .fill{background:var(--gold)}
+  .bar.me .v{color:var(--gold)}
+  .barnote{margin-top:22px; border-left:2px solid var(--gold); padding-left:16px; color:var(--fg); font-size:1.02rem; line-height:1.55}
+
+  /* Mood board */
+  .mood{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:6px}
+  .tile{position:relative; aspect-ratio:1/1; border-radius:12px; overflow:hidden; background:var(--panel); display:flex; flex-direction:column; justify-content:flex-end; padding:13px}
+  .tile img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.06)}
+  .tile::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.05) 38%,rgba(0,0,0,.82))}
+  .tile .cap{position:relative; z-index:2; font-size:.8rem; font-weight:700; color:#fff}
+  .tile .cap small{display:block; font-weight:500; color:rgba(255,255,255,.7); font-size:.7rem; margin-top:2px}
+
+  /* Logo showcase */
+  .logo-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:6px}
+  .logo-cell{border:1px solid var(--line); border-radius:14px; aspect-ratio:1/1; display:grid; place-items:center; gap:10px; text-align:center; padding:12px}
+  .logo-cell small{color:var(--muted); font-size:.72rem}
+  .lc-dark{background:#100F0B}
+  .lc-light{background:#FAFAF8; color:#161615}
+  .m{width:54px; height:54px; border-radius:15px; display:grid; place-items:center; background:var(--fg); color:var(--bg)}
+  .m.circle{border-radius:50%}
+  .m.outline{background:transparent; border:2px solid currentColor; color:var(--fg)}
+  .lc-light .m.outline{color:#161615}
+  .m svg{width:32px; height:32px; stroke:currentColor}
+
+  /* Paleta / tipo */
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:6px; align-items:start}
+  .swatches{display:flex; gap:12px; flex-wrap:wrap}
+  .sw{flex:1 1 86px}
+  .sw .box{height:64px; border-radius:10px; border:1px solid var(--line)}
+  .sw b{display:block; margin-top:8px; font-size:.84rem}
+  .sw small{color:var(--muted); font-size:.72rem}
+  .type-row{border-top:1px solid var(--line); padding:16px 0}
+  .type-row .big{font-family:var(--serif); font-size:2rem; line-height:1}
+  .type-row .lbl{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); margin-bottom:8px}
+  .type-row .big.sans{font-family:var(--sans); font-weight:800; font-size:1.2rem}
+
+  /* Lista editorial IG */
+  .iglist{border-top:1px solid var(--line); margin-top:4px; display:grid; grid-template-columns:1fr 1fr; gap:0 40px}
+  .ig{display:flex; gap:13px; align-items:flex-start; padding:15px 0; border-bottom:1px solid var(--line)}
+  .ig .tic{color:var(--gold); flex:none; margin-top:2px}
+  .ig .tic svg{width:20px; height:20px; display:block}
+  .ig h4{margin:0 0 3px; font-family:var(--sans); font-size:.98rem; font-weight:700}
+  .ig p{color:var(--muted); font-size:.84rem; line-height:1.4}
+  .igtip{margin-top:18px; color:var(--muted); font-size:.9rem; line-height:1.55}
+  .igtip b{color:var(--fg)}
+
+  /* Flujo */
+  .flow{border-top:1px solid var(--line); margin-top:4px}
+  .fstep{display:flex; align-items:center; gap:18px; padding:16px 0; border-bottom:1px solid var(--line)}
+  .fstep .n{width:30px; flex:none; font-family:var(--serif); font-style:italic; color:var(--gold); font-size:1.3rem}
+  .fstep h4{margin:0; font-family:var(--sans); font-size:1.02rem; font-weight:700}
+  .fstep p{color:var(--muted); font-size:.86rem; margin-top:2px}
+  .fout{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+  .fout .o{flex:1 1 220px; border:1px solid var(--line); border-radius:12px; padding:14px 16px; display:flex; gap:12px; align-items:center}
+  .fout .o svg{width:24px; height:24px; flex:none}
+  .fout .o.wa svg{color:var(--wa)} .fout .o.cal svg{color:var(--gold)}
+  .fout .o b{font-size:.92rem} .fout .o small{display:block; color:var(--muted); font-size:.76rem}
+
+  /* Presentarte */
+  .present{display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:6px; align-items:start}
+  .blk h4{margin:0 0 10px; font-family:var(--sans); font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faint)}
+  .tagline{font-family:var(--serif); font-size:1.7rem; line-height:1.1; margin-bottom:10px}
+  .alt{color:var(--muted); font-size:.92rem; line-height:1.8}
+  .bio{border-left:2px solid var(--gold); padding-left:16px; font-size:.96rem; line-height:1.7; white-space:pre-line; color:var(--fg)}
+  .voice{margin:0; padding-left:18px} .voice li{color:var(--muted); font-size:.92rem; margin:7px 0}
+
+  /* Plan */
+  .plan{border-top:1px solid var(--line); margin-top:4px}
+  .pweek{display:flex; gap:clamp(14px,3vw,26px); padding:16px 0; border-bottom:1px solid var(--line)}
+  .pweek .w{font-family:var(--serif); font-style:italic; color:var(--gold); flex:none; width:clamp(78px,16vw,120px); font-size:1.05rem; padding-top:2px}
+  .pweek p{color:var(--muted); font-size:.94rem; line-height:1.5} .pweek b{color:var(--fg)}
+
+  /* Chips */
+  .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+  .chip{border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:9px 16px; font-size:.9rem; font-weight:600; color:#fff}
+
+  /* Cierre */
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; border:none; cursor:pointer; font-family:var(--sans); font-weight:700; font-size:1.02rem; padding:16px 30px; border-radius:999px; text-decoration:none; transition:transform .2s,opacity .2s,border-color .2s}
+  .btn-main{background:#fff; color:#0B0B0A}
+  .btn-main:hover{transform:translateY(-2px); opacity:.92}
+  .btn-ghost{background:transparent; color:#fff; border:1px solid rgba(255,255,255,.45)}
+  .btn-ghost:hover{border-color:#fff}
+
+  .controls{position:fixed; left:0; right:0; bottom:0; z-index:25; display:flex; align-items:center; justify-content:center; gap:16px; padding:16px; padding-bottom:calc(14px + env(safe-area-inset-bottom)); background:linear-gradient(0deg,var(--bg) 42%,transparent)}
+  .nav-btn{width:46px; height:46px; border-radius:50%; border:1px solid var(--line-strong); background:rgba(20,20,16,.7); color:var(--fg); display:grid; place-items:center; cursor:pointer; transition:border-color .2s,background .2s; backdrop-filter:blur(6px)}
+  .nav-btn:hover:not([disabled]){border-color:var(--fg)}
+  .nav-btn[disabled]{opacity:.3; cursor:not-allowed}
+  .nav-btn svg{width:20px; height:20px}
+  .dots{display:flex; gap:7px; align-items:center; flex-wrap:wrap; justify-content:center; max-width:58vw}
+  .dot{width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.22); border:none; padding:0; cursor:pointer; transition:background .2s,width .2s,border-radius .2s}
+  .dot.on{background:var(--gold); width:20px; border-radius:4px}
+  .count{position:fixed; top:16px; right:18px; z-index:26; font-size:.8rem; color:var(--faint); letter-spacing:.08em}
+  .count b{color:var(--fg)}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:3px}
+
+  @media(max-width:720px){
+    .mood,.logo-grid{grid-template-columns:repeat(2,1fr)}
+    .two,.iglist,.present{grid-template-columns:1fr; gap:22px}
+    .cl{columns:1}
+    .dots{max-width:46vw}
+  }
+</style>
+<style>[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<div class="prog"><i id="prog"></i></div>
+<div class="count"><b id="cNow">1</b> / <span id="cTot">1</span></div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 Cover -->
+  <section class="slide active" aria-label="Portada">
+    <div class="inner cover">
+      <span class="logo-mark anim" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5c0-2.2 1.7-3.9 3.9-3.9 1.8 0 2.6 1.1 4.3 1.1s2.5-1.1 4.3-1.1 2.6 1.1 4.3 1.1 2.5-1.1 4.3-1.1c2.2 0 3.9 1.7 3.9 3.9 0 5.6-4.6 13.2-8.2 13.2-1.8 0-2.2-2.2-4.3-2.2s-2.5 2.2-4.3 2.2C9.6 25.7 5 18.1 5 12.5z"/><path d="M11 13.8v3M16 13.3v4M21 13.8v3"/></svg></span>
+      <h1 class="anim">Dr. Carlos Benavides</h1>
+      <div class="sub anim">Cómo llenar la agenda</div>
+      <p class="lead anim">El mercado real, cómo deciden hoy los pacientes, cómo le ganamos a la competencia y la imagen con la que vas a trabajar.</p>
+      <div class="cue anim">Pica o usa las flechas →</div>
+    </div>
+  </section>
+
+  <!-- 2 Mercado -->
+  <section class="slide" aria-label="El mercado">
+    <span class="idx" aria-hidden="true">01</span>
+    <div class="inner">
+      <span class="eye anim">El terreno de juego</span>
+      <h2 class="anim">En Zapopan hay un dentista en cada esquina.</h2>
+      <div class="bignum anim">
+        <div class="bn"><div class="n gold">4,660</div><div class="t">consultorios dentales en <b>Jalisco</b> — el 3er estado con más del país.</div></div>
+        <div class="bn"><div class="n">115 mil</div><div class="t">odontólogos activos en México, y subiendo cada año.</div></div>
+        <div class="bn"><div class="n">+21%</div><div class="t">crecieron los consultorios en México desde 2019 (hoy 72,707).</div></div>
+      </div>
+      <p class="lead anim" style="margin-top:18px">Ser buen dentista ya no alcanza. El reto no es clínico: es <b>que te encuentren y confíen en ti antes que en el de al lado.</b></p>
+      <p class="src anim">INEGI · DENUE 2024 · IMCO · Asociación Dental Mexicana.</p>
+    </div>
+  </section>
+
+  <!-- 3 Insight (full bleed) -->
+  <section class="slide full" aria-label="Cómo deciden">
+    <div class="fimg"><img src="m4.jpg" alt=""></div>
+    <div class="inner">
+      <span class="eye anim">El insight</span>
+      <h2 class="anim">Tus pacientes te eligen —o te descartan— antes de llamarte.</h2>
+      <div class="quote-mini anim">
+        <span><b>8 de 10</b>buscan dentista en Google</span>
+        <span><b>9 de 10</b>leen reseñas antes de llamar</span>
+        <span><b>Minutos</b>tardan en comparar y decidir</span>
+      </div>
+      <p class="src anim" style="color:rgba(255,255,255,.55)">Estudios de marketing dental 2025 · búsqueda local y reseñas.</p>
+    </div>
+  </section>
+
+  <!-- 4 Competencia -->
+  <section class="slide" aria-label="Competencia">
+    <span class="idx" aria-hidden="true">02</span>
+    <div class="inner">
+      <span class="eye anim">La competencia</span>
+      <h2 class="anim">Tu calificación ya compite. Tus reseñas, todavía no.</h2>
+      <div class="bars anim">
+        <div class="bar"><div class="nm">Dental City Kids &amp; Family</div><div class="track"><div class="fill" style="width:100%"></div></div><div class="v">479</div></div>
+        <div class="bar"><div class="nm">Dra. Adilene (infantil)</div><div class="track"><div class="fill" style="width:58%"></div></div><div class="v">278</div></div>
+        <div class="bar"><div class="nm">MF Dental Center</div><div class="track"><div class="fill" style="width:50%"></div></div><div class="v">240</div></div>
+        <div class="bar"><div class="nm">Dental AD</div><div class="track"><div class="fill" style="width:37%"></div></div><div class="v">175</div></div>
+        <div class="bar"><div class="nm">Kano Odontología</div><div class="track"><div class="fill" style="width:12%"></div></div><div class="v">57</div></div>
+        <div class="bar me"><div class="nm">Dr. Carlos Benavides</div><div class="track"><div class="fill" style="width:2%"></div></div><div class="v">5</div></div>
+      </div>
+      <p class="barnote anim">Casi todos tienen 5.0★, igual que tú. La diferencia es el <b>volumen de reseñas</b> — y eso es justo lo que más convence a un paciente nuevo. Es tu mayor oportunidad, y es gratis.</p>
+      <p class="src anim">Reseñas en Google, clínicas de Zapopan/GDL (dato público, oct. 2026).</p>
+    </div>
+  </section>
+
+  <!-- 5 Estrategia -->
+  <section class="slide" aria-label="Estrategia">
+    <span class="idx" aria-hidden="true">03</span>
+    <div class="inner">
+      <span class="eye anim">El plan de juego</span>
+      <h2 class="anim">Entonces, ¿cómo llenamos la agenda?</h2>
+      <div class="nl anim">
+        <div class="row"><span class="i">1</span><div><h4>Ser imposible de ignorar en Google</h4><p>Perfil de Google impecable y pedir una reseña a cada paciente. Ahí empieza a buscarte el 80%.</p></div></div>
+        <div class="row"><span class="i">2</span><div><h4>Un sitio que convierte <span class="ok">Listo</span></h4><p>Rápido, en celular y con agenda en línea: el que te encuentra, reserva en un clic.</p></div></div>
+        <div class="row"><span class="i">3</span><div><h4>Instagram con intención</h4><p>Antes/después, reels y tips. Construye confianza y te pone frente a gente nueva.</p></div></div>
+        <div class="row"><span class="i">4</span><div><h4>Responder al instante <span class="ok">Listo</span></h4><p>WhatsApp y confirmación. El primero que contesta se queda con el paciente.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Tu ventaja -->
+  <section class="slide" aria-label="Tu ventaja">
+    <span class="idx" aria-hidden="true">04</span>
+    <div class="inner">
+      <span class="eye anim">Dónde estás parado</span>
+      <h2 class="anim">Lo difícil ya está hecho.</h2>
+      <div class="cl anim">
+        <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Sitio rápido y responsive</div>
+        <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Agenda de citas en línea</div>
+        <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Reseñas reales 5.0★</div>
+        <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>WhatsApp + Calendar automáticos</div>
+        <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Logo e identidad propios</div>
+        <div class="it"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>Un lugar a donde llevar todo</div>
+      </div>
+      <p class="lead anim" style="margin-top:20px">Tienes la base que el 90% de los consultorios <b>no</b> tiene. Ahora toca lo de siempre: llevar gente a ella.</p>
+    </div>
+  </section>
+
+  <!-- 7 Vibe (full bleed) -->
+  <section class="slide full" aria-label="Tu imagen">
+    <div class="fimg"><img src="m6.jpg" alt=""></div>
+    <div class="inner">
+      <span class="eye anim">Tu sello visual</span>
+      <h2 class="anim">Limpio, oscuro, clínico-premium.</h2>
+      <p class="lead anim" style="color:rgba(255,255,255,.85)">Blanco y negro, fondos oscuros, macro de sonrisas y estética de radiografía. Una imagen que se siente moderna y seria — lo contrario del consultorio genérico.</p>
+      <div class="chips anim">
+        <span class="chip">Minimal</span><span class="chip">Blanco &amp; negro</span><span class="chip">Radiografía</span><span class="chip">Fotos en grises</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 Mood board -->
+  <section class="slide" aria-label="Mood board">
+    <span class="idx" aria-hidden="true">05</span>
+    <div class="inner">
+      <span class="eye anim">Mood board</span>
+      <h2 class="anim">Así se ve tu feed.</h2>
+      <div class="mood anim">
+        <div class="tile"><img src="m6.jpg" alt="Dentista joven"><span class="cap">Tú en acción<small>cercanía</small></span></div>
+        <div class="tile"><img src="m2.jpg" alt="Blanqueamiento"><span class="cap">Blanqueamiento<small>antes / después</small></span></div>
+        <div class="tile"><img src="m1.jpg" alt="Diagnóstico"><span class="cap">Casos<small>autoridad</small></span></div>
+        <div class="tile"><img src="m3.jpg" alt="Tip"><span class="cap">Tips<small>reels</small></span></div>
+        <div class="tile"><img src="m7.jpg" alt="Detrás de cámaras"><span class="cap">Detrás<small>stories</small></span></div>
+        <div class="tile"><img src="m4.jpg" alt="Chequeo"><span class="cap">Chequeos<small>rutina</small></span></div>
+        <div class="tile"><img src="m5.jpg" alt="Equipo"><span class="cap">El equipo<small>confianza</small></span></div>
+        <div class="tile"><img src="m8.jpg" alt="Detalle"><span class="cap">Macro<small>detalle</small></span></div>
+      </div>
+      <p class="lead anim" style="margin-top:14px; font-size:.92rem">Mismo filtro en grises, misma paleta, logo de marca de agua. <span style="color:var(--faint)">Fotos de referencia; son la guía de estilo para las tuyas.</span></p>
+    </div>
+  </section>
+
+  <!-- 9 Logo -->
+  <section class="slide" aria-label="Logo">
+    <span class="idx" aria-hidden="true">06</span>
+    <div class="inner">
+      <span class="eye anim">Tu logo</span>
+      <h2 class="anim">Un símbolo simple: una sonrisa.</h2>
+      <div class="logo-grid anim">
+        <div class="logo-cell lc-dark"><span class="m"><svg viewBox="0 0 32 32" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5c0-2.2 1.7-3.9 3.9-3.9 1.8 0 2.6 1.1 4.3 1.1s2.5-1.1 4.3-1.1 2.6 1.1 4.3 1.1 2.5-1.1 4.3-1.1c2.2 0 3.9 1.7 3.9 3.9 0 5.6-4.6 13.2-8.2 13.2-1.8 0-2.2-2.2-4.3-2.2s-2.5 2.2-4.3 2.2C9.6 25.7 5 18.1 5 12.5z"/><path d="M11 13.8v3M16 13.3v4M21 13.8v3"/></svg></span><small>Principal</small></div>
+        <div class="logo-cell lc-light"><span class="m"><svg viewBox="0 0 32 32" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5c0-2.2 1.7-3.9 3.9-3.9 1.8 0 2.6 1.1 4.3 1.1s2.5-1.1 4.3-1.1 2.6 1.1 4.3 1.1 2.5-1.1 4.3-1.1c2.2 0 3.9 1.7 3.9 3.9 0 5.6-4.6 13.2-8.2 13.2-1.8 0-2.2-2.2-4.3-2.2s-2.5 2.2-4.3 2.2C9.6 25.7 5 18.1 5 12.5z"/><path d="M11 13.8v3M16 13.3v4M21 13.8v3"/></svg></span><small>Sobre blanco</small></div>
+        <div class="logo-cell lc-dark"><span class="m circle"><svg viewBox="0 0 32 32" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5c0-2.2 1.7-3.9 3.9-3.9 1.8 0 2.6 1.1 4.3 1.1s2.5-1.1 4.3-1.1 2.6 1.1 4.3 1.1 2.5-1.1 4.3-1.1c2.2 0 3.9 1.7 3.9 3.9 0 5.6-4.6 13.2-8.2 13.2-1.8 0-2.2-2.2-4.3-2.2s-2.5 2.2-4.3 2.2C9.6 25.7 5 18.1 5 12.5z"/><path d="M11 13.8v3M16 13.3v4M21 13.8v3"/></svg></span><small>Perfil</small></div>
+        <div class="logo-cell lc-dark"><span class="m outline"><svg viewBox="0 0 32 32" fill="none" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5c0-2.2 1.7-3.9 3.9-3.9 1.8 0 2.6 1.1 4.3 1.1s2.5-1.1 4.3-1.1 2.6 1.1 4.3 1.1 2.5-1.1 4.3-1.1c2.2 0 3.9 1.7 3.9 3.9 0 5.6-4.6 13.2-8.2 13.2-1.8 0-2.2-2.2-4.3-2.2s-2.5 2.2-4.3 2.2C9.6 25.7 5 18.1 5 12.5z"/><path d="M11 13.8v3M16 13.3v4M21 13.8v3"/></svg></span><small>Marca de agua</small></div>
+      </div>
+      <p class="lead anim" style="margin-top:16px">Funciona en grande y en chico, en claro y oscuro. Perfecto como foto de perfil y marca de agua.</p>
+    </div>
+  </section>
+
+  <!-- 10 Identidad -->
+  <section class="slide" aria-label="Identidad">
+    <span class="idx" aria-hidden="true">07</span>
+    <div class="inner">
+      <span class="eye anim">Paleta y tipografía</span>
+      <h2 class="anim">Tu kit de identidad.</h2>
+      <div class="two">
+        <div class="anim">
+          <div class="swatches">
+            <div class="sw"><div class="box" style="background:#0B0B0A"></div><b>Negro</b><small>#0B0B0A</small></div>
+            <div class="sw"><div class="box" style="background:#FAFAF8"></div><b>Blanco</b><small>#FAFAF8</small></div>
+            <div class="sw"><div class="box" style="background:#8A8980"></div><b>Gris</b><small>#8A8980</small></div>
+            <div class="sw"><div class="box" style="background:#E0C05C"></div><b>Dorado</b><small>#E0C05C</small></div>
+          </div>
+          <p class="lead" style="margin-top:16px; font-size:.9rem">El dorado, con cuentagotas: estrellas y un acento. El resto, blanco y negro.</p>
+        </div>
+        <div class="anim">
+          <div class="type-row"><div class="lbl">Títulos — Fraunces</div><div class="big">Sonríe con confianza</div></div>
+          <div class="type-row"><div class="lbl">Texto — Hanken Grotesk</div><div class="big sans">Moderna, cálida y sin dolor. Cercana y a tu medida.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 Instagram -->
+  <section class="slide" aria-label="Qué publicar">
+    <span class="idx" aria-hidden="true">08</span>
+    <div class="inner">
+      <span class="eye anim">Instagram</span>
+      <h2 class="anim">Qué publicar, y por qué.</h2>
+      <div class="iglist anim">
+        <div class="ig"><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="16" rx="1.5"/><rect x="13" y="4" width="8" height="16" rx="1.5"/></svg></span><div><h4>Antes / Después</h4><p>Lo que más convierte. Carrusel, 1–2 por semana.</p></div></div>
+        <div class="ig"><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></span><div><h4>Reels de tips</h4><p>15–30 seg. Alcance con gente nueva.</p></div></div>
+        <div class="ig"><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span><div><h4>Detrás de cámaras</h4><p>Stories del día. Humaniza.</p></div></div>
+        <div class="ig"><span class="tic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg></span><div><h4>Reseñas</h4><p>Una reseña 5.0★ en fondo negro. Prueba social.</p></div></div>
+        <div class="ig"><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg></span><div><h4>Educativo</h4><p>"¿Sabías que…?". Te vuelve el experto cercano.</p></div></div>
+        <div class="ig"><span class="tic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8z"/></svg></span><div><h4>Tú, el doctor</h4><p>Tu cara, tu historia. La gente va con personas.</p></div></div>
+      </div>
+      <p class="igtip anim"><b>Regla de oro:</b> misma paleta, fondo oscuro, logo de marca de agua y el <b>link del sitio en la bio</b>.</p>
+    </div>
+  </section>
+
+  <!-- 12 Flujo -->
+  <section class="slide" aria-label="Flujo del sistema">
+    <span class="idx" aria-hidden="true">09</span>
+    <div class="inner">
+      <span class="eye anim">Tu sitio por dentro</span>
+      <h2 class="anim">De la visita a la cita, sin fricción.</h2>
+      <div class="flow anim">
+        <div class="fstep"><span class="n">1</span><div><h4>Entra desde tu bio o Google</h4><p>Un solo clic desde donde ya te buscan.</p></div></div>
+        <div class="fstep"><span class="n">2</span><div><h4>Elige día, hora y motivo</h4><p>Solo ve los horarios que tú abriste.</p></div></div>
+        <div class="fstep"><span class="n">3</span><div><h4>Deja sus datos y confirma</h4><p>El sistema arma todo solo.</p></div></div>
+      </div>
+      <div class="fout anim">
+        <div class="o wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg><div><b>Te llega por WhatsApp</b><small>con todos los datos — tú confirmas</small></div></div>
+        <div class="o cal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><div><b>Y a su Google Calendar</b><small>el paciente agenda con un clic</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 Presentarte -->
+  <section class="slide" aria-label="Cómo presentarte">
+    <span class="idx" aria-hidden="true">10</span>
+    <div class="inner">
+      <span class="eye anim">Tu voz</span>
+      <h2 class="anim">Cómo presentarte.</h2>
+      <div class="present">
+        <div class="blk anim">
+          <h4>Frase de marca</h4>
+          <div class="tagline">"Sonríe como siempre quisiste."</div>
+          <div class="alt">También: Tu sonrisa, en las mejores manos · Odontología sin miedo · Tu mejor sonrisa empieza hoy.</div>
+          <h4 style="margin-top:22px">Tu pitch</h4>
+          <div class="alt" style="color:var(--fg)">"Hago que ir al dentista deje de dar miedo: trato cercano, tecnología actual y planes claros, a tu medida."</div>
+        </div>
+        <div class="blk anim">
+          <h4>Bio de Instagram — para pegar</h4>
+          <div class="bio">Dr. Carlos Benavides · Odontología en Zapopan
+Sonríe con confianza — sin dolor, sin juicios.
+Agenda tu cita en línea aquí ↓</div>
+          <h4 style="margin-top:22px">Tono</h4>
+          <ul class="voice">
+            <li>Cercano y claro, sin tecnicismos.</li>
+            <li>Educa sin asustar. Seguro pero humilde.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 Plan -->
+  <section class="slide" aria-label="Plan de acción">
+    <span class="idx" aria-hidden="true">11</span>
+    <div class="inner">
+      <span class="eye anim">Manos a la obra</span>
+      <h2 class="anim">Las próximas 4 semanas.</h2>
+      <div class="plan anim">
+        <div class="pweek"><span class="w">Semana 1</span><p><b>Google.</b> Completa tu Perfil de Google (fotos, horario, link) y pide reseña a tus últimos 10 pacientes.</p></div>
+        <div class="pweek"><span class="w">Semana 2</span><p><b>Contenido.</b> 3 piezas: un antes/después, un reel con un tip y una reseña. Link del sitio en la bio.</p></div>
+        <div class="pweek"><span class="w">Semana 3</span><p><b>Reseñas en automático.</b> Tras cada cita, un WhatsApp amable pidiendo la reseña.</p></div>
+        <div class="pweek"><span class="w">Semana 4</span><p><b>Mide.</b> ¿Cuántas citas llegaron por el sitio y WhatsApp? Repite lo que jaló.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 Cierre (full bleed) -->
+  <section class="slide full" aria-label="Cierre">
+    <div class="fimg"><img src="hero-teeth.jpg" alt=""></div>
+    <div class="inner">
+      <span class="eye anim">El siguiente paso</span>
+      <h2 class="anim">La base está lista. Lo demás es llevar gente.</h2>
+      <p class="lead anim" style="color:rgba(255,255,255,.85)">Tu página ya tiene la vibe, el logo, las reseñas reales y el sistema para agendar. Échale un ojo y arrancamos con el plan.</p>
+      <div class="cta-row anim">
+        <a class="btn btn-main" href="https://claude.ai/artifact/MjwqVf2kvpEBnKeJR1bWkr" target="_blank" rel="noopener">Ver la página →</a>
+        <a class="btn btn-ghost" href="https://wa.me/523310233973" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="controls">
+  <button class="nav-btn" id="prev" type="button" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <div class="dots" id="dots" role="tablist" aria-label="Diapositivas"></div>
+  <button class="nav-btn" id="next" type="button" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+</div>
+
+<script>
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var total = slides.length, idx = 0;
+  var prog = document.getElementById('prog'), cNow = document.getElementById('cNow'), cTot = document.getElementById('cTot');
+  var prevBtn = document.getElementById('prev'), nextBtn = document.getElementById('next'), dotsWrap = document.getElementById('dots');
+  cTot.textContent = total;
+
+  var dots = [];
+  for(var i=0;i<total;i++){
+    (function(i){
+      var d=document.createElement('button');
+      d.className='dot'+(i===0?' on':''); d.type='button'; d.setAttribute('role','tab');
+      d.setAttribute('aria-label','Ir a la diapositiva '+(i+1));
+      d.addEventListener('click', function(e){ e.stopPropagation(); go(i); });
+      dotsWrap.appendChild(d); dots.push(d);
+    })(i);
+  }
+
+  function go(n){
+    idx = Math.max(0, Math.min(total-1, n));
+    slides.forEach(function(s,i){ s.classList.toggle('active', i===idx); s.setAttribute('aria-hidden', i===idx?'false':'true'); });
+    dots.forEach(function(d,i){ d.classList.toggle('on', i===idx); });
+    prog.style.width = ((idx+1)/total*100)+'%';
+    cNow.textContent = idx+1;
+    prevBtn.disabled = idx===0;
+    nextBtn.disabled = idx===total-1;
+    var act = slides[idx]; if(act) act.scrollTop = 0;
+  }
+  function next(){ if(idx<total-1) go(idx+1); }
+  function prev(){ if(idx>0) go(idx-1); }
+
+  nextBtn.addEventListener('click', function(e){ e.stopPropagation(); next(); });
+  prevBtn.addEventListener('click', function(e){ e.stopPropagation(); prev(); });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){ e.preventDefault(); next(); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); prev(); }
+    else if(e.key==='Home'){ go(0); } else if(e.key==='End'){ go(total-1); }
+  });
+
+  document.getElementById('deck').addEventListener('click', function(e){
+    if(e.target.closest('a,button')) return;
+    if(e.clientX < window.innerWidth*0.32) prev(); else next();
+  });
+
+  var sx=0, sy=0;
+  document.addEventListener('touchstart', function(e){ sx=e.touches[0].clientX; sy=e.touches[0].clientY; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)){ if(dx<0) next(); else prev(); }
+  }, {passive:true});
+
+  go(0);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dr. Carlos Benavides — Odontología en Zapopan, Jalisco. Agenda tu cita en línea: sin dolor, trato cercano y tecnología actual.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FAFAF8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2032%2032'%3E%3Crect%20width%3D'32'%20height%3D'32'%20rx%3D'7'%20fill%3D'%23161615'%2F%3E%3Cpath%20d%3D'M5%2012.5c0-2.2%201.7-3.9%203.9-3.9%201.8%200%202.6%201.1%204.3%201.1s2.5-1.1%204.3-1.1%202.6%201.1%204.3%201.1%202.5-1.1%204.3-1.1c2.2%200%203.9%201.7%203.9%203.9%200%205.6-4.6%2013.2-8.2%2013.2-1.8%200-2.2-2.2-4.3-2.2s-2.5%202.2-4.3%202.2C9.6%2025.7%205%2018.1%205%2012.5z'%20fill%3D'none'%20stroke%3D'%23ffffff'%20stroke-width%3D'2'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'%2F%3E%3C%2Fsvg%3E">
+<title>Dr. Carlos Benavides</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     Dr. Carlos Benavides — Odontología (Zapopan)
+     Minimal monocromático B/N + modo día/noche. Hero y franja CTA con
+     foto + degradado y oscurecer en scroll (parallax). Oro suave solo
+     en estrellas. Logo = sonrisa.
+     ============================================================ */
+  :root{
+    --bg:#FAFAF8; --bg-2:#F3F2EC; --surface:#FFFFFF; --surface-2:#F5F4EF;
+    --fg:#161615; --muted:#6B6B63; --faint:#9B9B92;
+    --line:#E6E4DD; --line-soft:#EEEDE7;
+    --btn:#161615; --btn-ink:#FBFBF8; --sel:#161615; --sel-ink:#FBFBF8;
+    --accent:#161615; --star:#C19A2E; --wa:#25D366;
+    --shadow:0 20px 48px -30px rgba(22,22,18,.30);
+    --shadow-sm:0 10px 26px -18px rgba(22,22,18,.22);
+    --r-lg:24px; --r-md:16px; --r-sm:12px; --maxw:1160px;
+    --sans:"Hanken Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E0E0C; --bg-2:#141311; --surface:#1A1A17; --surface-2:#211F1B;
+      --fg:#F1F0EA; --muted:#A6A59C; --faint:#76746B;
+      --line:#2A2824; --line-soft:#201E1B;
+      --btn:#F1F0EA; --btn-ink:#161615; --sel:#F1F0EA; --sel-ink:#161615;
+      --accent:#F1F0EA; --star:#E0C05C;
+      --shadow:0 22px 52px -30px rgba(0,0,0,.72);
+      --shadow-sm:0 12px 28px -18px rgba(0,0,0,.6);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E0E0C; --bg-2:#141311; --surface:#1A1A17; --surface-2:#211F1B;
+    --fg:#F1F0EA; --muted:#A6A59C; --faint:#76746B;
+    --line:#2A2824; --line-soft:#201E1B;
+    --btn:#F1F0EA; --btn-ink:#161615; --sel:#F1F0EA; --sel-ink:#161615;
+    --accent:#F1F0EA; --star:#E0C05C;
+    --shadow:0 22px 52px -30px rgba(0,0,0,.72);
+    --shadow-sm:0 12px 28px -18px rgba(0,0,0,.6);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:80px}
+  body{margin:0; background:var(--bg); color:var(--fg); font-family:var(--sans); font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+  img{max-width:100%; display:block}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--serif); font-weight:500; line-height:1.06; margin:0; text-wrap:balance; letter-spacing:-.015em}
+  p{margin:0}
+  .wrap{width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(16px,4vw,40px)}
+  section{padding-block:clamp(52px,8vw,100px)}
+  .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:.76rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--muted)}
+  .eyebrow::before{content:""; width:26px; height:1px; background:var(--fg); opacity:.4}
+  .eyebrow.on-dark{color:rgba(255,255,255,.82)}
+  .eyebrow.on-dark::before{background:#fff; opacity:.7}
+  .lede{color:var(--muted); font-size:1.08rem; max-width:62ch}
+
+  /* Nav */
+  .site-header{position:sticky; top:env(safe-area-inset-top,0px); z-index:50}
+  .nav{background:color-mix(in srgb,var(--bg) 80%,transparent); backdrop-filter:blur(14px); border-bottom:1px solid var(--line-soft)}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:12px}
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--fg)}
+  .monogram{width:44px; height:44px; border-radius:13px; background:var(--btn); color:var(--btn-ink); display:grid; place-items:center}
+  .monogram svg{width:26px; height:26px}
+  .brand b{font-family:var(--serif); font-weight:600; font-size:1.16rem; display:block; line-height:1}
+  .brand .tag{font-size:.7rem; letter-spacing:.24em; text-transform:uppercase; color:var(--muted)}
+  .nav-links{display:flex; align-items:center; gap:2px; list-style:none; margin:0; padding:0}
+  .nav-links a{text-decoration:none; color:var(--muted); font-weight:500; font-size:.95rem; padding:9px 13px; border-radius:999px; transition:background .2s,color .2s}
+  .nav-links a:hover{background:var(--surface-2); color:var(--fg)}
+  .nav-links .only-mobile{display:none}
+  .nav-cta{display:inline-flex; align-items:center; gap:10px}
+  .themer{width:42px; height:42px; flex:none; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--fg); display:grid; place-items:center; cursor:pointer; transition:border-color .2s,background .2s}
+  .themer:hover{border-color:var(--fg)}
+  .themer svg{width:19px; height:19px}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:9px; border:none; cursor:pointer; font-family:var(--sans); font-weight:600; font-size:.98rem; padding:13px 22px; border-radius:999px; text-decoration:none; transition:transform .2s,box-shadow .2s,background .2s,border-color .2s,color .2s,opacity .2s; white-space:nowrap}
+  .btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--fg); outline-offset:3px}
+  .btn-primary{background:var(--btn); color:var(--btn-ink); box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{transform:translateY(-2px); opacity:.9; box-shadow:var(--shadow)}
+  .btn-ghost{background:transparent; color:var(--fg); border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--fg); background:var(--surface-2); transform:translateY(-2px)}
+  .btn-light{background:#fff; color:#161615}
+  .btn-light:hover{transform:translateY(-2px); opacity:.92}
+  .btn-ghost-light{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.5)}
+  .btn-ghost-light:hover{border-color:#fff; background:rgba(255,255,255,.16); transform:translateY(-2px)}
+  .btn-sm{padding:10px 18px; font-size:.92rem}
+  .btn[disabled]{opacity:.38; cursor:not-allowed; box-shadow:none; transform:none!important}
+  .hamb{display:none; background:none; border:1px solid var(--line); border-radius:11px; width:42px; height:42px; cursor:pointer; align-items:center; justify-content:center; color:var(--fg)}
+
+  /* ===== HERO banner ===== */
+  .hero{position:relative; min-height:clamp(560px,86vh,760px); display:flex; align-items:flex-end; overflow:hidden; background:#0b0b0a}
+  .hero-media{position:absolute; inset:0; z-index:0; will-change:transform}
+  .hero-media img{width:100%; height:100%; object-fit:cover; transform:scale(1.12); filter:grayscale(.12) contrast(1.04)}
+  .hero-shade{position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(8,8,7,.28) 0%, rgba(8,8,7,.40) 42%, rgba(8,8,7,.86) 100%)}
+  .hero-darken{position:absolute; inset:0; z-index:2; background:#070706; opacity:0}
+  .hero-inner{position:relative; z-index:3; color:#fff; padding-block:clamp(40px,8vh,88px)}
+  .hero h1{color:#fff; font-size:clamp(2.7rem,7vw,5.4rem); line-height:.98; letter-spacing:-.03em; margin:18px 0 20px; max-width:16ch}
+  .hero .lede{color:rgba(255,255,255,.86); font-size:clamp(1.05rem,2vw,1.25rem); max-width:50ch}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:14px; margin-top:30px}
+  .hero-mini{display:flex; align-items:center; gap:12px; margin-top:28px; color:rgba(255,255,255,.82); font-size:.95rem}
+  .avatars{display:flex}
+  .avatars span{width:36px; height:36px; border-radius:50%; border:2px solid rgba(255,255,255,.25); margin-left:-10px; background:rgba(255,255,255,.14); display:grid; place-items:center; color:rgba(255,255,255,.85)}
+  .avatars span:first-child{margin-left:0}
+  .avatars span svg{width:20px; height:20px}
+  .hero-mini b{color:#fff}
+
+  /* Tira de confianza */
+  .trust{background:var(--bg-2); border-bottom:1px solid var(--line-soft)}
+  .trust .wrap{display:flex; flex-wrap:wrap; justify-content:center; gap:14px clamp(18px,5vw,56px); padding-block:24px; text-align:center}
+  .trust b{font-family:var(--serif); font-weight:600; color:var(--fg)}
+  .trust .ti{display:flex; align-items:center; gap:10px; font-size:1rem; color:var(--muted)}
+  .trust .ti svg{color:var(--fg); width:20px; height:20px; flex:none}
+  .trust .ti svg.gold{color:var(--star)}
+
+  /* Conóceme */
+  .about-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px,5vw,64px); align-items:center}
+  .about-art{aspect-ratio:1/1.12; border-radius:var(--r-lg); position:relative; overflow:hidden; box-shadow:var(--shadow); display:grid; place-items:center; background:var(--surface-2); border:1px solid var(--line)}
+  .about-art svg{width:54%; color:var(--faint)}
+  .about-art::after{content:"Retrato del Dr. Benavides"; position:absolute; bottom:16px; left:0; right:0; text-align:center; font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--faint)}
+  .about h2{font-size:clamp(2rem,4.4vw,3rem); margin:14px 0 18px}
+  .about .sign{font-family:var(--serif); font-style:italic; color:var(--muted); margin-top:20px; font-size:1.15rem}
+  .pills{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px}
+  .pill{background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:8px 15px; font-size:.86rem; font-weight:600; color:var(--fg); display:inline-flex; align-items:center; gap:8px}
+  .pill svg{width:16px; height:16px; color:var(--muted)}
+
+  /* Secciones */
+  .sec-head{max-width:64ch; margin-bottom:clamp(34px,5vw,54px)}
+  .sec-head h2{font-size:clamp(2rem,4.6vw,3.1rem); margin:14px 0 14px}
+
+  /* Servicios */
+  .cards{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); padding:26px 22px; transition:transform .25s, box-shadow .25s, border-color .25s}
+  .card:hover{transform:translateY(-6px); box-shadow:var(--shadow); border-color:var(--fg)}
+  .card .ic{width:50px; height:50px; border-radius:13px; background:var(--surface-2); color:var(--fg); display:grid; place-items:center; margin-bottom:18px}
+  .card .ic svg{width:26px; height:26px}
+  .card h3{font-size:1.14rem; margin-bottom:9px; font-weight:600; font-family:var(--sans); letter-spacing:0}
+  .card p{color:var(--muted); font-size:.94rem}
+
+  /* Por qué elegirnos */
+  .why{background:var(--bg-2)}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  .why-item{display:flex; gap:16px; align-items:flex-start}
+  .why-item .ic{flex:none; width:48px; height:48px; border-radius:13px; background:var(--surface); border:1px solid var(--line); color:var(--fg); display:grid; place-items:center}
+  .why-item .ic svg{width:24px; height:24px}
+  .why-item .ic.gold{color:var(--star)}
+  .why-item h3{font-size:1.08rem; margin-bottom:5px; font-weight:600; font-family:var(--sans)}
+  .why-item p{color:var(--muted); font-size:.93rem}
+
+  /* Proceso */
+  .steps{display:grid; grid-template-columns:repeat(5,1fr); gap:16px}
+  .step{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); padding:26px 20px; position:relative}
+  .step .sic{width:44px; height:44px; border-radius:12px; background:var(--surface-2); color:var(--fg); display:grid; place-items:center; margin-bottom:16px}
+  .step .sic svg{width:23px; height:23px}
+  .step .num{position:absolute; top:22px; right:20px; font-family:var(--serif); font-size:1.5rem; font-weight:500; color:var(--faint); line-height:1}
+  .step h3{font-size:1.04rem; margin:0 0 8px; font-weight:600; font-family:var(--sans)}
+  .step p{color:var(--muted); font-size:.9rem}
+
+  /* ===== Franja CTA con radiografía ===== */
+  .xband{position:relative; overflow:hidden; background:#0b0b0a; text-align:center}
+  .xband-media{position:absolute; inset:0; z-index:0; will-change:transform}
+  .xband-media img{width:100%; height:100%; object-fit:cover; transform:scale(1.14); filter:grayscale(.3) contrast(1.05)}
+  .xband-shade{position:absolute; inset:0; z-index:1; background:radial-gradient(120% 100% at 50% 50%, rgba(8,8,7,.55), rgba(8,8,7,.86))}
+  .xband-darken{position:absolute; inset:0; z-index:2; background:#060605; opacity:0}
+  .xband-inner{position:relative; z-index:3; color:#fff; padding-block:clamp(64px,12vw,120px); max-width:720px; margin-inline:auto}
+  .xband-inner h2{color:#fff; font-size:clamp(2.1rem,5.2vw,3.6rem); margin:16px 0 16px}
+  .xband-inner p{color:rgba(255,255,255,.82); max-width:52ch; margin:0 auto 28px}
+
+  /* Testimonios (compactos) */
+  .tst{background:var(--bg-2)}
+  .tst{padding-block:clamp(44px,7vw,78px)}
+  .tst .sec-head{margin-bottom:clamp(26px,4vw,38px)}
+  .tst-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+  .tcard{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); padding:22px 20px}
+  .stars{display:flex; gap:2px; margin-bottom:11px; color:var(--star)}
+  .stars svg{width:16px; height:16px}
+  .tcard blockquote{margin:0}
+  .tcard p{font-size:.96rem; line-height:1.55; color:var(--fg)}
+  .tcard .who{margin-top:14px; font-weight:600; font-family:var(--serif); color:var(--fg); font-size:1.02rem}
+  .tcard .who-meta{display:block; font-weight:500; font-family:var(--sans); font-size:.78rem; color:var(--faint); margin-top:2px}
+
+  /* FAQ */
+  .faq-list details{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); padding:4px 22px; transition:border-color .2s}
+  .faq-list details[open]{border-color:var(--fg)}
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary::marker{content:""}
+  .faq-list summary{color:var(--fg)}
+  .faq-list details p{color:var(--muted)}
+
+  /* ============ AGENDADOR ============ */
+  .booking{background:var(--bg-2)}
+  .booking .sec-head{text-align:center; margin-inline:auto}
+  .booking .sec-head .lede{margin-inline:auto}
+  .booker{display:grid; grid-template-columns:1.45fr .9fr; gap:22px; align-items:start}
+  .booker-main{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:clamp(22px,3.5vw,34px)}
+  .booker-top{margin-bottom:6px}
+  .booker-kicker{display:flex; justify-content:space-between; align-items:baseline; font-size:.82rem; font-weight:600; color:var(--muted); margin-bottom:10px}
+  .booker-kicker b{font-family:var(--serif); color:var(--fg); font-size:1rem}
+  .bbar{height:5px; background:var(--line); border-radius:5px; overflow:hidden}
+  .bbar i{display:block; height:100%; width:0; background:var(--fg); border-radius:5px; transition:width .35s ease}
+  .bstep{padding-block:22px; border-top:1px solid var(--line-soft)}
+  .bstep:last-child{padding-bottom:0}
+  .bstep-head{display:flex; align-items:center; gap:12px; margin-bottom:16px}
+  .bnum{width:30px; height:30px; flex:none; border-radius:50%; background:var(--surface-2); border:1px solid var(--line); color:var(--fg); display:grid; place-items:center; font-family:var(--serif); font-weight:600; font-size:.95rem; transition:background .25s,color .25s,border-color .25s}
+  .bstep.done .bnum{background:var(--sel); border-color:var(--sel); color:var(--sel-ink)}
+  .bstep-head h3{font-size:1.12rem; font-weight:600; font-family:var(--sans)}
+  .weeknav{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px}
+  .wk-label{font-weight:600; font-size:.98rem; color:var(--fg)}
+  .wk-arrow{width:40px; height:40px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--fg); font-size:1.4rem; line-height:1; cursor:pointer; display:grid; place-items:center; transition:border-color .2s,background .2s}
+  .wk-arrow:hover:not([disabled]){border-color:var(--fg); background:var(--surface-2)}
+  .wk-arrow[disabled]{opacity:.3; cursor:not-allowed}
+  .days-scroll{overflow-x:auto; padding-bottom:4px; margin-inline:-4px; padding-inline:4px}
+  .days{display:flex; gap:8px; min-width:min-content}
+  .day{flex:1 0 58px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); padding:10px 6px 9px; display:flex; flex-direction:column; align-items:center; gap:3px; cursor:pointer; transition:border-color .18s,background .18s,transform .18s; font-family:var(--sans)}
+  .day:hover:not([disabled]){border-color:var(--fg); transform:translateY(-2px)}
+  .day .dw{font-size:.7rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--muted)}
+  .day .dn{font-family:var(--serif); font-size:1.5rem; font-weight:600; color:var(--fg); line-height:1.05}
+  .day .dot{width:6px; height:6px; border-radius:50%; background:var(--fg); margin-top:2px}
+  .day[disabled]{opacity:.4; cursor:not-allowed}
+  .day[disabled] .dot{background:var(--faint)}
+  .day.sel{background:var(--sel); border-color:var(--sel)}
+  .day.sel .dw,.day.sel .dn{color:var(--sel-ink)}
+  .day.sel .dot{background:var(--sel-ink)}
+  .slots{display:flex; flex-wrap:wrap; gap:10px}
+  .slot{background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:11px 20px; font-weight:600; font-size:.98rem; cursor:pointer; font-family:var(--sans); color:var(--fg); transition:border-color .18s,background .18s,color .18s,transform .18s}
+  .slot:hover{border-color:var(--fg); transform:translateY(-2px)}
+  .slot.sel{background:var(--sel); border-color:var(--sel); color:var(--sel-ink)}
+  .hint{color:var(--muted); font-size:.95rem; background:var(--surface-2); border:1px dashed var(--line); border-radius:var(--r-sm); padding:14px 16px}
+  .reasons{display:flex; flex-wrap:wrap; gap:10px}
+  .reason{background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:10px 17px; font-weight:600; font-size:.93rem; cursor:pointer; font-family:var(--sans); color:var(--fg); display:inline-flex; align-items:center; gap:8px; transition:border-color .18s,background .18s,color .18s}
+  .reason:hover{border-color:var(--fg)}
+  .reason.sel{background:var(--sel); border-color:var(--sel); color:var(--sel-ink)}
+  .reason .rdot{width:8px; height:8px; border-radius:50%; background:var(--line)}
+  .reason.sel .rdot{background:var(--sel-ink)}
+  .bfields{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .bfields .field.full{grid-column:1/-1}
+  .field label{display:block; font-size:.85rem; font-weight:600; margin-bottom:7px; color:var(--fg)}
+  .field input{width:100%; font-family:var(--sans); font-size:1rem; color:var(--fg); background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:13px 15px; transition:border-color .2s}
+  .field input::placeholder{color:var(--faint)}
+  .field input:focus{border-color:var(--fg); outline:none}
+
+  .summary-card{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg); padding:clamp(22px,3vw,30px); box-shadow:var(--shadow)}
+  .summary-card h4{font-family:var(--serif); font-weight:600; font-size:1.3rem; margin:0 0 4px; color:var(--fg)}
+  .summary-card .sc-sub{color:var(--muted); font-size:.9rem; margin-bottom:18px}
+  .sum{list-style:none; margin:0 0 20px; padding:0}
+  .sum li{display:flex; justify-content:space-between; gap:14px; padding:13px 0; border-bottom:1px solid var(--line-soft); font-size:.97rem}
+  .sum li:last-child{border-bottom:none}
+  .sum li span{color:var(--muted)}
+  .sum li b{font-weight:600; text-align:right; max-width:60%; color:var(--fg)}
+  .summary-card .btn{width:100%}
+  .sum-note{color:var(--faint); font-size:.83rem; margin-top:14px; text-align:center; line-height:1.45}
+  .booked{text-align:center}
+  .booked-ic{width:64px; height:64px; border-radius:50%; background:var(--surface-2); color:var(--fg); display:grid; place-items:center; margin:0 auto 14px}
+  .booked-ic svg{width:32px; height:32px}
+  .booked h4{margin-bottom:10px}
+  .booked p{color:var(--muted); font-size:.96rem; margin-bottom:20px}
+  .booked .btn{margin-bottom:10px}
+  .side-contact{margin-top:18px; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md); padding:22px}
+  .side-contact h4{font-family:var(--serif); font-weight:600; font-size:1.1rem; margin:0 0 14px; color:var(--fg)}
+  .side-contact .ci{display:flex; gap:12px; align-items:flex-start; margin-bottom:13px; font-size:.93rem}
+  .side-contact .ci:last-of-type{margin-bottom:0}
+  .side-contact .ci svg{width:20px; height:20px; color:var(--fg); flex:none; margin-top:2px}
+  .side-contact .ci span{color:var(--muted)}
+  .side-contact .ci b{display:block; color:var(--fg); font-weight:600}
+
+  /* Footer */
+  footer{background:var(--bg-2); color:var(--muted); padding-block:clamp(44px,6vw,64px); border-top:1px solid var(--line)}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:34px}
+  footer .brand b{color:var(--fg)}
+  footer h4{font-family:var(--sans); text-transform:uppercase; letter-spacing:.14em; font-size:.74rem; color:var(--faint); margin:0 0 14px}
+  footer ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px}
+  footer a{color:var(--muted); text-decoration:none}
+  footer a:hover{color:var(--fg)}
+  .foot-note{border-top:1px solid var(--line); margin-top:38px; padding-top:22px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-size:.84rem; color:var(--faint)}
+  .foot-tag{max-width:34ch; margin-top:14px; color:var(--muted); font-size:.92rem}
+
+  /* WhatsApp flotante */
+  .wa{position:fixed; right:20px; bottom:calc(20px + env(safe-area-inset-bottom,0px)); z-index:60; width:56px; height:56px; border-radius:50%; background:var(--wa); color:#fff; display:grid; place-items:center; box-shadow:0 14px 32px -12px rgba(37,211,102,.5); transition:transform .2s}
+  .wa:hover{transform:scale(1.08)}
+  .wa svg{width:30px; height:30px}
+
+  /* Reveal */
+  .reveal{opacity:1; transform:none; transition:opacity .7s ease, transform .7s ease}
+  .js .reveal{opacity:0; transform:translateY(24px)}
+  .js .reveal.in{opacity:1; transform:none}
+  .js .stagger.in > *{animation:rise .6s ease both}
+  .js .stagger.in > *:nth-child(2){animation-delay:.07s}
+  .js .stagger.in > *:nth-child(3){animation-delay:.14s}
+  .js .stagger.in > *:nth-child(4){animation-delay:.21s}
+  .js .stagger.in > *:nth-child(5){animation-delay:.28s}
+  .js .stagger.in > *:nth-child(6){animation-delay:.35s}
+  .js .stagger.in > *:nth-child(7){animation-delay:.42s}
+  .js .stagger.in > *:nth-child(8){animation-delay:.49s}
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+  /* Responsive */
+  @media(max-width:960px){
+    .about-grid{grid-template-columns:1fr}
+    .about-art{order:-1; max-width:420px}
+    .cards,.why-grid,.tst-grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .booker{grid-template-columns:1fr}
+  }
+  @media(max-width:620px){
+    .nav-links,.nav .nav-cta .btn-primary{display:none}
+    .hamb{display:inline-flex}
+    .nav-links.open{display:flex; position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:2px; background:var(--bg); border-bottom:1px solid var(--line); padding:14px clamp(16px,4vw,40px) 20px}
+    .nav-links.open a{padding:13px 14px}
+    .nav-links.open .only-mobile{display:block; margin-top:6px}
+    .nav-links.open .only-mobile a{justify-content:center}
+    .nav{position:relative}
+    .hero{min-height:clamp(500px,82vh,640px)}
+    .cards,.why-grid,.tst-grid,.steps,.foot-grid{grid-template-columns:1fr}
+    .foot-grid{gap:26px}
+    .bfields{grid-template-columns:1fr}
+    body{font-size:16px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important; animation:none!important}
+    .js .reveal{opacity:1; transform:none}
+    .hero-media img,.xband-media img{transform:scale(1.05)!important}
+  }
+</style>
+<style>[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<!-- Header -->
+<header class="site-header">
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a href="#inicio" class="brand" aria-label="Dr. Carlos Benavides, inicio">
+        <span class="monogram" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5c0-2.2 1.7-3.9 3.9-3.9 1.8 0 2.6 1.1 4.3 1.1s2.5-1.1 4.3-1.1 2.6 1.1 4.3 1.1 2.5-1.1 4.3-1.1c2.2 0 3.9 1.7 3.9 3.9 0 5.6-4.6 13.2-8.2 13.2-1.8 0-2.2-2.2-4.3-2.2s-2.5 2.2-4.3 2.2C9.6 25.7 5 18.1 5 12.5z"/><path d="M11 13.8v3M16 13.3v4M21 13.8v3"/></svg>
+        </span>
+        <span><b>Dr. Carlos Benavides</b><span class="tag">Odontología</span></span>
+      </a>
+      <ul class="nav-links" id="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#conoceme">Conóceme</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#agendar">Contacto</a></li>
+        <li class="only-mobile"><a href="#agendar" class="btn btn-primary btn-sm">Agendar cita</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="themer" id="themer" type="button" aria-label="Cambiar entre modo claro y oscuro">
+          <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+          <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"/></svg>
+        </button>
+        <a href="#agendar" class="btn btn-primary btn-sm">Agendar cita</a>
+        <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero banner -->
+<section class="hero" id="inicio">
+  <div class="hero-media" id="heroMedia"><img src="hero-teeth.jpg" alt="Primer plano de una sonrisa sana" fetchpriority="high"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-darken" id="heroDark"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow on-dark">Odontología en Zapopan</span>
+    <h1>Sonríe como siempre quisiste.</h1>
+    <p class="lede">Odontología moderna y sin dolor. Diseño de sonrisa, limpieza, ortodoncia e implantes — con un trato cercano, sin juicios y a tu medida.</p>
+    <div class="hero-cta">
+      <a href="#agendar" class="btn btn-light">Agendar cita</a>
+      <a href="https://wa.me/523310233973" target="_blank" rel="noopener" class="btn btn-ghost-light">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.8.8-.9 1.9-.4 3.1a9 9 0 004.3 4c1.5.6 2.6.5 3.3.3.5-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1z"/></svg>
+        Escríbeme por WhatsApp
+      </a>
+    </div>
+    <div class="hero-mini">
+      <div class="avatars" aria-hidden="true">
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8z"/></svg></span>
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8z"/></svg></span>
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8z"/></svg></span>
+        <span><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8z"/></svg></span>
+      </div>
+      <span><b>5.0★</b> · pacientes que nos recomiendan en Google</span>
+    </div>
+  </div>
+</section>
+
+<!-- Tira de confianza -->
+<div class="trust">
+  <div class="wrap">
+    <div class="ti"><svg class="gold" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><span><b>5.0★</b> en Google</span></div>
+    <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C7 17 3 13 3 8.5A4.5 4.5 0 0112 6a4.5 4.5 0 019 2.5C21 13 17 17 12 21z"/></svg><span>Atención <b>sin dolor</b></span></div>
+    <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 15h4"/></svg><span><b>Meses</b> sin intereses</span></div>
+    <div class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg><span><b>Agenda</b> en línea</span></div>
+  </div>
+</div>
+
+<!-- Conóceme -->
+<section class="about" id="conoceme">
+  <div class="wrap about-grid">
+    <div class="about-art reveal" role="img" aria-label="Retrato del Dr. Carlos Benavides">
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="60" cy="44" r="22"/><path d="M22 100c4-20 20-30 38-30s34 10 38 30"/></svg>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Conóceme</span>
+      <h2>Conoce al Dr. Carlos Benavides</h2>
+      <p class="lede">Me formo como Cirujano Dentista en la Universidad Cuauhtémoc y ya sumo experiencia clínica real: odontología integral y asistencia en cirugía maxilofacial, además de capacitación en reanimación (RCP), patología bucal y atención a pacientes con diabetes. Pero lo que más cuida tu sonrisa no está en los diplomas: es escucharte. Aquí no hay juicios ni sermones — solo un plan claro, a tu medida, para que salgas sonriendo con confianza.</p>
+      <div class="pills">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C7 17 3 13 3 8.5A4.5 4.5 0 0112 6a4.5 4.5 0 019 2.5C21 13 17 17 12 21z"/></svg>Trato cercano y sin juicios</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Formación continua</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21C7 17 3 13 3 8.5A4.5 4.5 0 0112 6a4.5 4.5 0 019 2.5C21 13 17 17 12 21z"/></svg>Atención sin dolor</span>
+      </div>
+      <p class="sign">— Dr. Carlos Benavides</p>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2>Todo lo que tu sonrisa necesita, en un solo lugar</h2>
+      <p class="lede">Desde una limpieza de rutina hasta el rediseño completo de tu sonrisa, con la misma calidez y tecnología.</p>
+    </div>
+    <div class="cards reveal stagger">
+      <article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3c-2.5 0-4 2-4 5 0 2 .5 3 1 6s1 7 3 7 1.5-5 4-5 2 5 4 5 2.5-4 3-7 1-4 1-6c0-3-1.5-5-4-5-2 0-2.5 1.5-4 1.5S10 3 8 3z"/></svg></span><h3>Limpieza y prevención</h3><p>Mantén dientes y encías sanos con limpiezas profesionales.</p></article>
+      <article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.8 4L18 7.8 14 10l-.2 4.3L12 11l-1.8 3.3L10 10 6 7.8 10.2 6z"/><path d="M18 14l.8 1.8L21 16.6 19 17.6l-.2 2.2-1-2-2.2-.2 2-.8z"/></svg></span><h3>Blanqueamiento dental</h3><p>Recupera el brillo de tu sonrisa en una sola sesión.</p></article>
+      <article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a8 8 0 0116 0c0 5-4 9-8 9S4 14 4 9z"/><path d="M8 11c1 2 7 2 8 0"/></svg></span><h3>Diseño de sonrisa y carillas</h3><p>Transforma tu sonrisa con carillas de porcelana a tu medida.</p></article>
+      <article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="8" rx="4"/><path d="M8 8v8M12 8v8M16 8v8"/></svg></span><h3>Ortodoncia y alineadores</h3><p>Alinea tus dientes de forma discreta y cómoda.</p></article>
+      <article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 015 5c0 2-1 3-1 5s0 5-1 7-1.5 3-2 3-1-1-1-3-1-3-2-3-1 1-1 3-.5 3-1 3-1-1-2-3-1-5-1-7-1-3-1-5a5 5 0 015-5z"/></svg></span><h3>Implantes dentales</h3><p>Recupera piezas perdidas con implantes de titanio de alta calidad.</p></article>
+      <article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2c-3 0-5 2-5 6 0 3 2 4 2 8 0 3 1 6 2 6s1-4 2-4 1 4 2 4 2-3 2-6c0-4 2-5 2-8 0-4-2-6-5-6"/><path d="M7 14l2 2M17 14l-2 2"/></svg></span><h3>Endodoncia</h3><p>Salva tus dientes y elimina el dolor con tratamientos de conducto.</p></article>
+      <article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="10" r="2.2"/><path d="M4 20c0-3 2-5 5-5s5 2 5 5M14 20c0-2 1-3.5 3-3.5s3 1.5 3 3.5"/></svg></span><h3>Odontopediatría</h3><p>Cuidado dental amable y paciente para los más pequeños.</p></article>
+      <article class="card"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Resinas y restauraciones</h3><p>Repara caries y fracturas con materiales estéticos.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- Por qué elegirnos -->
+<section class="why" id="porque">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Por qué elegirnos</span>
+      <h2>Una experiencia dental pensada para ti</h2>
+    </div>
+    <div class="why-grid reveal stagger">
+      <div class="why-item"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M9 15l2 2 4-4"/></svg></span><div><h3>Agenda en línea</h3><p>Reserva tu cita en segundos, sin llamadas ni esperas.</p></div></div>
+      <div class="why-item"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C7 17 3 13 3 8.5A4.5 4.5 0 0112 6a4.5 4.5 0 019 2.5C21 13 17 17 12 21z"/></svg></span><div><h3>Sin dolor</h3><p>Técnicas de sedación y anestesia moderna para tu máxima comodidad.</p></div></div>
+      <div class="why-item"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span><div><h3>Trato personalizado</h3><p>Un plan claro, sin letras chiquitas ni sorpresas.</p></div></div>
+      <div class="why-item"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></span><div><h3>Horario flexible</h3><p>Reserva en línea el horario que mejor te acomode.</p></div></div>
+      <div class="why-item"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20M6 15h4"/></svg></span><div><h3>Facilidades de pago</h3><p>Meses sin intereses y planes de financiamiento.</p></div></div>
+      <div class="why-item"><span class="ic gold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg></span><div><h3>5.0★ en Google</h3><p>Pacientes reales que recomiendan la clínica.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Proceso -->
+<section class="process" id="proceso">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Proceso</span>
+      <h2>Tu camino a una nueva sonrisa</h2>
+      <p class="lede">Cinco pasos claros, sin complicaciones, desde el primer mensaje hasta tu sonrisa lista.</p>
+    </div>
+    <div class="steps reveal stagger">
+      <div class="step"><span class="num">1</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M8.5 15l2.2 2.2L16 12"/></svg></span><h3>Agenda tu cita</h3><p>En línea o por WhatsApp, en menos de un minuto.</p></div>
+      <div class="step"><span class="num">2</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><h3>Valoración y diagnóstico</h3><p>Revisamos tu salud bucal y te explicamos todo con claridad.</p></div>
+      <div class="step"><span class="num">3</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a2 2 0 012 2v0h1a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h1M9 3a2 2 0 00-2 2M9 3a2 2 0 012 2h2M8 12h8M8 16h5"/></svg></span><h3>Plan personalizado</h3><p>Te presentamos opciones, tiempos y costos claros.</p></div>
+      <div class="step"><span class="num">4</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Tratamiento cómodo</h3><p>Procedimientos sin dolor y a tu ritmo.</p></div>
+      <div class="step"><span class="num">5</span><span class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C7 17 3 13 3 8.5A4.5 4.5 0 0112 6a4.5 4.5 0 019 2.5c0 1.6-.5 3.1-1.4 4.5"/><path d="M14 19l2 2 4-4"/></svg></span><h3>Seguimiento</h3><p>Cuidamos tu sonrisa a largo plazo con revisiones y mantenimiento.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Franja CTA con radiografía -->
+<section class="xband" id="cta">
+  <div class="xband-media" id="xMedia"><img src="xray.jpg" alt="Radiografía panorámica dental"></div>
+  <div class="xband-shade"></div>
+  <div class="xband-darken" id="xDark"></div>
+  <div class="wrap xband-inner">
+    <span class="eyebrow on-dark" style="justify-content:center">Da el primer paso</span>
+    <h2>Tu sonrisa merece la mejor atención.</h2>
+    <p>Tecnología, experiencia y un trato humano. Agenda tu valoración y descubre todo lo que podemos hacer por ti.</p>
+    <a href="#agendar" class="btn btn-light">Agendar mi cita</a>
+  </div>
+</section>
+
+<!-- Testimonios -->
+<section class="tst" id="testimonios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Testimonios</span>
+      <h2>Lo que dicen nuestros pacientes</h2>
+    </div>
+    <div class="tst-grid reveal stagger">
+      <figure class="tcard"><div class="stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg></div><blockquote><p>“El doctor es muy profesional y las instalaciones están impecables. Definitivamente una gran opción por el rumbo.”</p></blockquote><figcaption class="who">Mateo Marchand<span class="who-meta">Google · Local Guide · hace 3 meses</span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg></div><blockquote><p>“El mejor dentista, súper amable, profesional y un gran ser humano.”</p></blockquote><figcaption class="who">Lupita Nava<span class="who-meta">Google · hace un año</span></figcaption></figure>
+      <figure class="tcard"><div class="stars" aria-label="5 de 5 estrellas"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg></div><blockquote><p>“Muy buen odontólogo, súper atento y honrado con sus pacientes.”</p></blockquote><figcaption class="who">Ashley Reyes<span class="who-meta">Google · hace 4 años</span></figcaption></figure>
+    </div>
+    <div style="text-align:center; margin-top:24px">
+      <a class="btn btn-ghost" href="https://maps.app.goo.gl/nnS5SaxMZKDLVTF28" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:var(--star)" aria-hidden="true"><path d="M12 2l2.6 6 6.4.5-4.9 4.2 1.5 6.3L12 16.9 6.4 19l1.5-6.3L3 8.5 9.4 8z"/></svg>
+        Ver las 5 reseñas en Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid" style="display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(28px,5vw,60px); align-items:start">
+    <div class="reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 style="font-size:clamp(2rem,4.4vw,3rem); margin-top:14px">¿Tienes dudas? Aquí las resolvemos</h2>
+      <p class="lede" style="margin-top:16px">¿Te queda pendiente algo? Escríbeme por WhatsApp y con gusto te oriento.</p>
+    </div>
+    <div class="faq-list reveal" style="display:flex; flex-direction:column; gap:12px">
+      <details open><summary style="list-style:none; cursor:pointer; padding:18px 0; font-weight:600; font-size:1.06rem; display:flex; align-items:center; justify-content:space-between; gap:16px">¿Los tratamientos duelen?<span class="chev" aria-hidden="true">+</span></summary><p style="padding:0 0 20px">Usamos anestesia moderna y opciones de sedación. La mayoría de pacientes no siente molestias; tu comodidad es la prioridad.</p></details>
+      <details><summary style="list-style:none; cursor:pointer; padding:18px 0; font-weight:600; font-size:1.06rem; display:flex; align-items:center; justify-content:space-between; gap:16px">¿Tienen facilidades de pago?<span class="chev" aria-hidden="true">+</span></summary><p style="padding:0 0 20px">Sí, manejamos meses sin intereses y planes de financiamiento. Te damos el costo por adelantado, sin sorpresas.</p></details>
+      <details><summary style="list-style:none; cursor:pointer; padding:18px 0; font-weight:600; font-size:1.06rem; display:flex; align-items:center; justify-content:space-between; gap:16px">¿Cada cuánto debo hacer una limpieza?<span class="chev" aria-hidden="true">+</span></summary><p style="padding:0 0 20px">Recomendamos una limpieza profesional cada 6 meses para prevenir caries y enfermedad de encías.</p></details>
+      <details><summary style="list-style:none; cursor:pointer; padding:18px 0; font-weight:600; font-size:1.06rem; display:flex; align-items:center; justify-content:space-between; gap:16px">¿Dónde están y cuál es el horario?<span class="chev" aria-hidden="true">+</span></summary><p style="padding:0 0 20px">Odontología Integral San Miguel · Calle Santa Martha 68, Col. San José del Bajío II, Zapopan, Jalisco. Horario de atención: lunes a jueves 10:00–12:00 y viernes 9:00–17:00.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- Agendar cita -->
+<section class="booking" id="agendar">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Agenda en línea</span>
+      <h2>Reserva tu cita en segundos</h2>
+      <p class="lede">Elige el día y la hora que mejor te acomoden, como reservar tu clase favorita. Sin llamadas ni esperas.</p>
+    </div>
+    <div class="booker reveal">
+      <div class="booker-main">
+        <div class="booker-top">
+          <div class="booker-kicker"><span>Reserva en 4 pasos</span><b id="progTxt">0 / 4</b></div>
+          <div class="bbar"><i id="bbarFill"></i></div>
+        </div>
+        <div class="bstep" id="st1">
+          <div class="bstep-head"><span class="bnum">1</span><h3>Elige el día</h3></div>
+          <div class="weeknav">
+            <button class="wk-arrow" id="wkPrev" type="button" aria-label="Semana anterior">‹</button>
+            <span class="wk-label" id="wkLabel">—</span>
+            <button class="wk-arrow" id="wkNext" type="button" aria-label="Semana siguiente">›</button>
+          </div>
+          <div class="days-scroll"><div class="days" id="days" role="list"></div></div>
+        </div>
+        <div class="bstep" id="st2">
+          <div class="bstep-head"><span class="bnum">2</span><h3>Elige la hora</h3></div>
+          <div class="slots" id="slots"></div>
+        </div>
+        <div class="bstep" id="st3">
+          <div class="bstep-head"><span class="bnum">3</span><h3>¿Qué te trae?</h3></div>
+          <div class="reasons" id="reasons"></div>
+        </div>
+        <div class="bstep" id="st4">
+          <div class="bstep-head"><span class="bnum">4</span><h3>Tus datos</h3></div>
+          <div class="bfields">
+            <div class="field"><label for="bnombre">Nombre</label><input id="bnombre" type="text" placeholder="Tu nombre" autocomplete="name"></div>
+            <div class="field"><label for="btel">Teléfono / WhatsApp</label><input id="btel" type="tel" placeholder="33 1023 3973" autocomplete="tel"></div>
+            <div class="field full"><label for="bnota">Nota para el doctor (opcional)</label><input id="bnota" type="text" placeholder="Ej. me sangra una encía, vengo de parte de…"></div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="summary-card">
+          <div id="sumForm">
+            <h4>Resumen de tu cita</h4>
+            <p class="sc-sub">Revisa y confirma. No se cobra nada en línea.</p>
+            <ul class="sum">
+              <li><span>Día</span><b id="sumDay">—</b></li>
+              <li><span>Hora</span><b id="sumTime">—</b></li>
+              <li><span>Motivo</span><b id="sumReason">—</b></li>
+              <li><span>Nombre</span><b id="sumName">—</b></li>
+            </ul>
+            <button class="btn btn-primary" id="confirmBtn" type="button" disabled>Confirmar cita</button>
+            <p class="sum-note" id="sumNote">Completa los 4 pasos para confirmar.</p>
+          </div>
+          <div class="booked" id="booked" hidden role="status">
+            <div class="booked-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h4>¡Tu cita está casi lista!</h4>
+            <p id="bookedText">—</p>
+            <a class="btn btn-primary" id="waConfirm" href="#" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.8.8-.9 1.9-.4 3.1a9 9 0 004.3 4c1.5.6 2.6.5 3.3.3.5-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1z"/></svg>
+              Confirmar por WhatsApp
+            </a>
+            <a class="btn btn-ghost" id="calConfirm" href="#" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+              Agregar a mi calendario
+            </a>
+            <button class="btn btn-ghost" id="againBtn" type="button">Agendar otra</button>
+            <p class="sum-note">Al enviar por WhatsApp confirmamos disponibilidad y tu lugar queda apartado.</p>
+          </div>
+        </div>
+
+        <div class="side-contact">
+          <h4>Visítanos</h4>
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>Odontología Integral San Miguel</b>Calle Santa Martha 68, Col. San José del Bajío II, C.P. 45148, Zapopan, Jalisco</span></div>
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.7 2.7a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.4-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg><span><b>Teléfono / WhatsApp</b>+52 33 1023 3973</span></div>
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><b>Correo</b>cb192402@gmail.com</span></div>
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span><b>Instagram</b><a href="https://instagram.com/carlos_benavides15" target="_blank" rel="noopener" style="color:var(--fg); text-decoration:underline; text-underline-offset:2px">@carlos_benavides15</a></span></div>
+          <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Horario</b>Lun a Jue 10:00–12:00 · Vie 9:00–17:00</span></div>
+          <a class="btn btn-ghost btn-sm" href="https://maps.app.goo.gl/nnS5SaxMZKDLVTF28" target="_blank" rel="noopener" style="margin-top:14px; width:100%">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Cómo llegar
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#inicio" class="brand">
+          <span class="monogram" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5c0-2.2 1.7-3.9 3.9-3.9 1.8 0 2.6 1.1 4.3 1.1s2.5-1.1 4.3-1.1 2.6 1.1 4.3 1.1 2.5-1.1 4.3-1.1c2.2 0 3.9 1.7 3.9 3.9 0 5.6-4.6 13.2-8.2 13.2-1.8 0-2.2-2.2-4.3-2.2s-2.5 2.2-4.3 2.2C9.6 25.7 5 18.1 5 12.5z"/><path d="M11 13.8v3M16 13.3v4M21 13.8v3"/></svg></span>
+          <span><b>Dr. Carlos Benavides</b><span class="tag">Odontología</span></span>
+        </a>
+        <p class="foot-tag">Odontología moderna, cálida y sin dolor en Zapopan. Tu sonrisa, en las mejores manos.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#conoceme">Conóceme</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proceso">Proceso</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#agendar">Agendar cita</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visítanos</h4>
+        <ul>
+          <li>Odontología Integral San Miguel</li>
+          <li>Calle Santa Martha 68</li>
+          <li>Col. San José del Bajío II, Zapopan</li>
+          <li>Lun–Jue 10:00–12:00 · Vie 9:00–17:00</li>
+          <li>+52 33 1023 3973</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>© 2026 Dr. Carlos Benavides · Odontología</span>
+      <span>Zapopan, Jalisco</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a class="wa" href="https://wa.me/523310233973" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.8.8-.9 1.9-.4 3.1a9 9 0 004.3 4c1.5.6 2.6.5 3.3.3.5-.1 1.3-.5 1.5-1 .2-.5.2-.9.1-1z"/></svg>
+</a>
+
+<script>
+  document.documentElement.classList.add('js');
+
+  // ---- Tema: día / noche ----
+  (function(){
+    var btn=document.getElementById('themer');
+    var root=document.documentElement;
+    var moon=btn.querySelector('.ic-moon'), sun=btn.querySelector('.ic-sun');
+    function sysDark(){ return window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches; }
+    var saved; try{ saved=localStorage.getItem('cb-theme'); }catch(e){}
+    if(saved==='dark'||saved==='light') root.setAttribute('data-theme',saved);
+    function cur(){ return root.getAttribute('data-theme') || (sysDark()?'dark':'light'); }
+    function sync(){ var dark=cur()==='dark'; moon.hidden=dark; sun.hidden=!dark; }
+    sync();
+    btn.addEventListener('click', function(){
+      var next = cur()==='dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try{ localStorage.setItem('cb-theme', next); }catch(e){}
+      sync();
+    });
+  })();
+
+  // ---- Menú móvil ----
+  var hamb = document.getElementById('hamb');
+  var menu = document.getElementById('menu');
+  hamb.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    hamb.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ menu.classList.remove('open'); hamb.setAttribute('aria-expanded','false'); }
+  });
+
+  // ---- FAQ: girar el "+" ----
+  document.querySelectorAll('.faq-list details').forEach(function(d){
+    var chev = d.querySelector('.chev');
+    if(chev){ chev.style.cssText='flex:none;width:28px;height:28px;border-radius:50%;background:var(--surface-2);color:var(--fg);display:grid;place-items:center;font-weight:700;transition:transform .25s'; }
+    d.addEventListener('toggle', function(){ if(chev) chev.style.transform = d.open ? 'rotate(45deg)' : 'none'; });
+    if(d.open && chev) chev.style.transform='rotate(45deg)';
+  });
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- Parallax + oscurecer con el scroll ----
+  (function(){
+    if(reduce) return;
+    var heroMedia=document.getElementById('heroMedia'), heroDark=document.getElementById('heroDark');
+    var hero=document.getElementById('inicio');
+    var xMedia=document.getElementById('xMedia'), xDark=document.getElementById('xDark');
+    var xband=document.getElementById('cta');
+    var ticking=false;
+    function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+    function frame(){
+      ticking=false;
+      var vh=window.innerHeight, y=window.pageYOffset||0;
+      // Hero
+      if(hero){
+        var hh=hero.offsetHeight;
+        var p=clamp(y/hh,0,1);
+        heroMedia.style.transform='translate3d(0,'+(y*0.28)+'px,0)';
+        heroDark.style.opacity=(p*0.6).toFixed(3);
+      }
+      // Franja radiografía
+      if(xband){
+        var r=xband.getBoundingClientRect();
+        var prog=clamp((vh-r.top)/(vh+r.height),0,1);
+        xMedia.style.transform='translate3d(0,'+((prog-0.5)*70)+'px,0)';
+        xDark.style.opacity=(clamp((prog-0.25)*1.1,0,1)*0.55).toFixed(3);
+      }
+    }
+    function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    frame();
+  })();
+
+  // ============ AGENDADOR ============
+  var WA_NUMBER = '523310233973';
+  var CLINIC = 'Odontología Integral San Miguel, Calle Santa Martha 68, Col. San José del Bajío II, Zapopan, Jalisco';
+  var DOW_SHORT = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+  var DOW_LONG  = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  var MON_SHORT = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  var MON_LONG  = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  var REASONS = ['Chequeo o limpieza','Dolor o molestia','Blanqueamiento / estética','Ortodoncia / alineadores','Implantes','Odontopediatría (niños)','Otro'];
+
+  function pad(n){ return (n<10?'0':'')+n; }
+  function midnight(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  function addDays(d,n){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()+n); }
+  function sameDay(a,b){ return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate(); }
+  function mondayOf(d){ var x=midnight(d); var g=x.getDay(); var diff=(g===0?-6:1-g); return addDays(x,diff); }
+  function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+  function longDate(d){ return DOW_LONG[d.getDay()]+' '+d.getDate()+' de '+MON_LONG[d.getMonth()]; }
+
+  var TODAY = midnight(new Date());
+  var MIN_WEEK = mondayOf(TODAY);
+  var MAX_WEEK = addDays(MIN_WEEK, 56);
+
+  function slotsFor(d){
+    if(midnight(d) < TODAY) return [];
+    var dow = d.getDay();
+    var s = [];
+    if(dow>=1 && dow<=4) s = ['10:00','10:30','11:00','11:30'];       // Lun–Jue: 10 a 12
+    else if(dow===5)     s = ['09:00','11:00','13:00','15:00','17:00']; // Vie: todo el día cada 2 h
+    else return [];
+    if(sameDay(d, new Date())){
+      var now = new Date();
+      s = s.filter(function(t){
+        var p = t.split(':'); var dt = new Date(d.getFullYear(), d.getMonth(), d.getDate(), +p[0], +p[1]);
+        return dt > now;
+      });
+    }
+    return s;
+  }
+
+  var state = { week: mondayOf(TODAY), date:null, slot:null, reason:null };
+  var elDays=document.getElementById('days'), elSlots=document.getElementById('slots'), elReasons=document.getElementById('reasons');
+  var elWkLabel=document.getElementById('wkLabel'), elPrev=document.getElementById('wkPrev'), elNext=document.getElementById('wkNext');
+  var inNombre=document.getElementById('bnombre'), inTel=document.getElementById('btel'), inNota=document.getElementById('bnota');
+  var sumDay=document.getElementById('sumDay'), sumTime=document.getElementById('sumTime'), sumReason=document.getElementById('sumReason'), sumName=document.getElementById('sumName');
+  var confirmBtn=document.getElementById('confirmBtn'), sumNote=document.getElementById('sumNote');
+  var sumForm=document.getElementById('sumForm'), booked=document.getElementById('booked'), bookedText=document.getElementById('bookedText'), waConfirm=document.getElementById('waConfirm'), calConfirm=document.getElementById('calConfirm'), againBtn=document.getElementById('againBtn');
+  var bbarFill=document.getElementById('bbarFill'), progTxt=document.getElementById('progTxt');
+  var st1=document.getElementById('st1'), st2=document.getElementById('st2'), st3=document.getElementById('st3'), st4=document.getElementById('st4');
+
+  function renderWeek(){
+    var end = addDays(state.week,6);
+    elWkLabel.textContent = (state.week.getMonth()===end.getMonth())
+      ? state.week.getDate()+' – '+end.getDate()+' '+MON_SHORT[end.getMonth()]
+      : state.week.getDate()+' '+MON_SHORT[state.week.getMonth()]+' – '+end.getDate()+' '+MON_SHORT[end.getMonth()];
+    elPrev.disabled = (state.week <= MIN_WEEK);
+    elNext.disabled = (state.week >= MAX_WEEK);
+    elDays.innerHTML='';
+    for(var i=0;i<7;i++){
+      (function(d){
+        var av = slotsFor(d).length;
+        var b=document.createElement('button');
+        b.type='button'; b.className='day'; b.setAttribute('role','listitem');
+        if(av===0) b.disabled=true;
+        if(state.date && sameDay(d,state.date)) b.classList.add('sel');
+        b.setAttribute('aria-label', longDate(d)+(av? ', '+av+' horarios':', sin disponibilidad'));
+        b.innerHTML='<span class="dw">'+DOW_SHORT[d.getDay()]+'</span><span class="dn">'+d.getDate()+'</span><span class="dot"></span>';
+        b.addEventListener('click', function(){ state.date=d; state.slot=null; renderWeek(); renderSlots(); update(); });
+        elDays.appendChild(b);
+      })(addDays(state.week,i));
+    }
+  }
+
+  function renderSlots(){
+    elSlots.innerHTML='';
+    if(!state.date){ elSlots.innerHTML='<p class="hint">Primero elige un día disponible arriba.</p>'; return; }
+    var slots=slotsFor(state.date);
+    if(!slots.length){ elSlots.innerHTML='<p class="hint">Sin disponibilidad este día. Prueba con otro — los <b>viernes</b> hay más horarios.</p>'; return; }
+    slots.forEach(function(t){
+      var b=document.createElement('button');
+      b.type='button'; b.className='slot'+(state.slot===t?' sel':''); b.textContent=t;
+      b.addEventListener('click', function(){ state.slot=t; renderSlots(); update(); });
+      elSlots.appendChild(b);
+    });
+  }
+
+  function renderReasons(){
+    REASONS.forEach(function(r){
+      var b=document.createElement('button');
+      b.type='button'; b.className='reason'; b.innerHTML='<span class="rdot"></span>'+r;
+      b.addEventListener('click', function(){
+        state.reason=r;
+        elReasons.querySelectorAll('.reason').forEach(function(x){x.classList.remove('sel')});
+        b.classList.add('sel'); update();
+      });
+      elReasons.appendChild(b);
+    });
+  }
+
+  function update(){
+    sumDay.textContent = state.date ? cap(longDate(state.date)) : '—';
+    sumTime.textContent = state.slot ? state.slot+' h' : '—';
+    sumReason.textContent = state.reason || '—';
+    var nombreOk = inNombre.value.trim().length>0;
+    var telOk = inTel.value.trim().length>0;
+    sumName.textContent = inNombre.value.trim() || '—';
+    st1.classList.toggle('done', !!state.date);
+    st2.classList.toggle('done', !!state.slot);
+    st3.classList.toggle('done', !!state.reason);
+    st4.classList.toggle('done', nombreOk && telOk);
+    var done = (!!state.date)+(!!state.slot)+(!!state.reason)+((nombreOk&&telOk)?1:0);
+    bbarFill.style.width = (done/4*100)+'%';
+    progTxt.textContent = done+' / 4';
+    var ready = state.date && state.slot && state.reason && nombreOk && telOk;
+    confirmBtn.disabled = !ready;
+    sumNote.textContent = ready ? '¡Todo listo! Da clic para confirmar.' : 'Completa los 4 pasos para confirmar.';
+  }
+
+  [inNombre,inTel,inNota].forEach(function(el){ el.addEventListener('input', update); });
+
+  elPrev.addEventListener('click', function(){ if(state.week>MIN_WEEK){ state.week=addDays(state.week,-7); renderWeek(); } });
+  elNext.addEventListener('click', function(){ if(state.week<MAX_WEEK){ state.week=addDays(state.week,7); renderWeek(); } });
+
+  function gcalDates(d, slot){
+    var p = slot.split(':');
+    var start = new Date(d.getFullYear(), d.getMonth(), d.getDate(), +p[0], +p[1]);
+    var end = new Date(start.getTime() + 30*60000);
+    function fmt(x){ return x.getFullYear()+pad(x.getMonth()+1)+pad(x.getDate())+'T'+pad(x.getHours())+pad(x.getMinutes())+'00'; }
+    return fmt(start)+'/'+fmt(end);
+  }
+
+  confirmBtn.addEventListener('click', function(){
+    if(confirmBtn.disabled) return;
+    var nombre=inNombre.value.trim(), tel=inTel.value.trim(), nota=inNota.value.trim();
+    var primer=nombre.split(' ')[0];
+    var texto='Hola, me gustaría agendar una cita.\n\n'
+      + cap(longDate(state.date))+' a las '+state.slot+' h\n'
+      + 'Motivo: '+state.reason+'\n'
+      + 'Nombre: '+nombre+'\n'
+      + 'Tel: '+tel
+      + (nota ? '\nNota: '+nota : '');
+    waConfirm.href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(texto);
+
+    var detalles='Motivo: '+state.reason+'\nTel: '+tel+(nota?'\nNota: '+nota:'')+'\n\nCita solicitada en línea; sujeta a confirmación.';
+    calConfirm.href='https://calendar.google.com/calendar/render?action=TEMPLATE'
+      +'&text='+encodeURIComponent('Cita dental — Dr. Carlos Benavides')
+      +'&dates='+gcalDates(state.date,state.slot)
+      +'&ctz=America/Mexico_City'
+      +'&details='+encodeURIComponent(detalles)
+      +'&location='+encodeURIComponent(CLINIC);
+
+    bookedText.textContent='Gracias, '+primer+'. Tu cita: '+cap(longDate(state.date))+' a las '+state.slot+' h ('+state.reason+'). Confírmala por WhatsApp para apartar tu lugar.';
+    sumForm.hidden=true; booked.hidden=false;
+    booked.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  againBtn.addEventListener('click', function(){
+    state.date=null; state.slot=null; state.reason=null;
+    inNombre.value=''; inTel.value=''; inNota.value='';
+    elReasons.querySelectorAll('.reason').forEach(function(x){x.classList.remove('sel')});
+    booked.hidden=true; sumForm.hidden=false;
+    renderWeek(); renderSlots(); update();
+  });
+
+  renderWeek(); renderSlots(); renderReasons(); update();
+
+  // ---- Reveal al hacer scroll ----
+  var els = document.querySelectorAll('.reveal');
+  if(reduce || !('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ els.forEach(function(el){ el.classList.add('in'); }); }, 1600);
+  }
+</script>
+
+</body>
+</html>
